@@ -25,7 +25,7 @@ namespace BulkyBook.Models
 
         [ForeignKey("ApplicationUserId")]
         [ValidateNever]
-        public string ApplicationUser { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
         [NotMapped]
         public double Price
@@ -34,11 +34,11 @@ namespace BulkyBook.Models
             {
                 if (Product == null) return 0;
 
-                if(Count < 50)
+                if(Count <= 50)
                 {
                     return Product.Price;
                 }
-                else if (Count < 100)
+                else if (Count <= 100)
                 {
                     return Product.Price50 ;
                 }

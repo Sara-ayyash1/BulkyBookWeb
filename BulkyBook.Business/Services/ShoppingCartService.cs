@@ -51,7 +51,7 @@ namespace BulkyBook.Business.Services
             if(existingCartItem != null)
             {
                 existingCartItem.Count += cart.Count;
-               await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 return existingCartItem;
             }
             else

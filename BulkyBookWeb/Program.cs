@@ -29,6 +29,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 builder.Services.AddScoped<ICategoryService, CategoryService>(); //Scoped basically means it is created once per HTTP request,and we can reuse it everywhere in that request and then throw away.
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
+builder.Services.AddScoped<IApplicationUserService , ApplicationUserService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
